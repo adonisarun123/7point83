@@ -48,11 +48,10 @@ export function PhilosophyPreview() {
                         ))}
                         <div className="relative z-10 text-center">
                             <div className="font-display text-[3.5rem] font-light text-accent-glow drop-shadow-[0_0_40px_rgba(79,255,208,0.5)] leading-none">
-                                7.83
+                                7.83<span className="text-[1.5rem] text-text-muted">Hz</span>
                             </div>
-                            <div className="text-[1.5rem] text-text-muted">Hz</div>
                             <div className="mt-2 text-[0.85rem] tracking-[3px] uppercase text-text-muted">
-                                Earth's Heartbeat
+                                Schumann Resonance
                             </div>
                         </div>
                     </div>
@@ -61,15 +60,13 @@ export function PhilosophyPreview() {
                 {/* Content */}
                 <div className="reveal opacity-0 translate-y-[60px] transition-all duration-1000 ease-out delay-200">
                     <h2 className="text-[clamp(2rem,4vw,3rem)] mb-8 text-text-primary leading-tight">
-                        The Science & <span className="text-accent-glow italic">Spirit</span> of Resonance
+                        The <span className="text-accent-glow italic">Resonance</span> Philosophy
                     </h2>
                     <p className="text-[1.1rem] text-text-muted mb-6">
-                        For billions of years, all life on Earth evolved in harmony with a fundamental frequency.
-                        Modern life has disconnected us from this ancient rhythm.
+                        Modern life vibrates at a chaotic pace. Yet, nature has a constant, underlying rhythm—the Schumann Resonance—pulsing at exactly 7.83Hz. This is the Earth's heartbeat.
                     </p>
                     <p className="text-[1.1rem] text-text-muted mb-8">
-                        Our mission is to restore that connection through immersive experiences in nature,
-                        guided practices, and a return to simplicity.
+                        At 7point83club, we believe <span className="text-text-primary font-normal">human wellbeing relies on returning to this baseline</span>. We are building a sanctuary designed to energize your spirit and ground your body, stripping away digital noise to find silence, clarity, and power.
                     </p>
                     <Link
                         href="/philosophy"

@@ -30,7 +30,7 @@ export function Hero() {
 
             for (let i = 0; i < 3; i++) {
                 ctx.beginPath();
-                ctx.strokeStyle = `rgba(79, 255, 208, ${0.1 - i * 0.03})`;
+                ctx.strokeStyle = `rgba(79, 255, 208, ${0.3 - i * 0.05})`;
                 ctx.lineWidth = 2 - i * 0.5;
 
                 for (let x = 0; x <= canvas.width; x += 5) {
@@ -66,9 +66,9 @@ export function Hero() {
             {/* Background Image */}
             <div className="absolute top-0 left-0 w-full h-full -z-20">
                 <img
-                    src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2874&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=2000&q=80"
                     alt="Nature Background"
-                    className="w-full h-full object-cover brightness-[0.3] saturate-[0.7]"
+                    className="w-full h-full object-cover brightness-[0.4] saturate-[0.8]"
                 />
             </div>
 
@@ -79,7 +79,7 @@ export function Hero() {
             <canvas
                 ref={canvasRef}
                 id="waveCanvas"
-                className="absolute bottom-0 left-0 w-full h-[40%] -z-10 opacity-40"
+                className="absolute bottom-0 left-0 w-full h-[50%] -z-10 opacity-80"
             />
 
             {/* Particles */}
@@ -90,32 +90,30 @@ export function Hero() {
             {/* Content */}
             <div className="relative z-10 max-w-[900px] flex flex-col items-center">
                 <p className="text-[clamp(0.75rem,1.5vw,0.9rem)] tracking-[6px] uppercase text-accent-glow mb-6 opacity-0 animate-fade-in-up [animation-delay:0.3s]">
-                    Tune Into Earth's Frequency
+                    A sanctuary for the soul
                 </p>
 
                 <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-light mb-6 bg-gradient-to-br from-text-primary via-accent-glow to-text-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer opacity-0 animate-fade-in-up [animation-delay:0.5s]">
-                    Reconnect with the <br />
-                    Rhythm of Life
+                    Tune Into the Heartbeat of the Earth
                 </h1>
 
                 <p className="text-[clamp(1rem,2vw,1.25rem)] max-w-[600px] mx-auto mb-12 text-text-muted opacity-0 animate-fade-in-up [animation-delay:0.7s]">
-                    Experience the profound healing power of the Schumann Resonance.
-                    Align your body, mind, and spirit with the heartbeat of the planet.
+                    A sanctuary for those seeking to reground, recharge, and synchronize with nature's perfect frequency: 7.83Hz.
                 </p>
 
                 <Link
-                    href="/retreats"
+                    href="#cta-form"
                     className="inline-flex items-center gap-3 px-12 py-4.5 bg-transparent text-accent-glow border border-accent-glow font-body text-[0.9rem] tracking-[3px] uppercase relative overflow-hidden transition-all duration-500 ease-out group opacity-0 animate-fade-in-up [animation-delay:0.9s] hover:text-bg-deep hover:shadow-[0_0_50px_rgba(79,255,208,0.4)]"
                 >
                     <span className="absolute top-0 left-[-100%] w-full h-full bg-accent-glow transition-all duration-500 ease-out group-hover:left-0 -z-10" />
-                    Explore Retreats
+                    Request Your Invitation
                     <ArrowRight className="w-4 h-4 transition-transform duration-400 ease-out group-hover:translate-x-1.5" />
                 </Link>
             </div>
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted text-[0.75rem] tracking-[2px] uppercase opacity-0 animate-fade-in-up [animation-delay:1.2s]">
-                <span>Scroll</span>
+                <span>Discover</span>
                 <div className="w-[1px] h-[60px] bg-gradient-to-b from-accent-glow to-transparent animate-[scroll-pulse_2s_ease-in-out_infinite]" />
             </div>
         </section>

@@ -7,6 +7,8 @@ import { Journey } from "@/components/home/Journey";
 import { CTA } from "@/components/home/CTA";
 import { Schema } from "@/components/seo/Schema";
 
+import { AudioPlayer } from "@/components/layout/AudioPlayer";
+
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
@@ -31,6 +33,7 @@ export default function Home() {
       <Journey />
       <CTA />
       <Footer />
+      <AudioPlayer />
     </main>
   );
 }

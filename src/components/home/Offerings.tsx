@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Tent, Brain, Leaf } from "lucide-react";
+import { Home, Zap, Clock } from "lucide-react";
 
 export function Offerings() {
     const sectionRef = useRef<HTMLElement>(null);
@@ -26,28 +26,28 @@ export function Offerings() {
 
     const offerings = [
         {
-            icon: <Tent size={32} />,
-            title: "Immersive Retreats",
-            description: "Multi-day journeys in sacred locations designed to reset your nervous system.",
+            icon: <Home size={24} />,
+            title: "Resonance Stays",
+            description: "Off-grid accommodations situated in high-energy natural landscapes, architecturally designed for silence and restoration.",
         },
         {
-            icon: <Brain size={32} />,
-            title: "Frequency Healing",
-            description: "Sound baths and meditation practices tuned to 7.83Hz and 432Hz.",
+            icon: <Zap size={24} />,
+            title: "Grounding Workshops",
+            description: "Curated activities designed to physically reconnect your biology with the earth's electrical charge and natural rhythms.",
         },
         {
-            icon: <Leaf size={32} />,
-            title: "Nature Reconnection",
-            description: "Forest bathing, grounding, and wild swimming to restore biological rhythm.",
+            icon: <Clock size={24} />,
+            title: "Frequency Alignment",
+            description: "Guided sessions using sound and environment to lower stress responses and recharge your internal energy systems.",
         },
     ];
 
     return (
         <section ref={sectionRef} className="py-[clamp(80px,12vw,140px)] px-[5%] bg-bg-deep relative">
             <div className="text-center max-w-[700px] mx-auto mb-20 reveal opacity-0 translate-y-[60px] transition-all duration-1000 ease-out">
-                <h2 className="text-[clamp(2rem,4vw,3rem)] mb-5">What We Offer</h2>
+                <h2 className="text-[clamp(2rem,4vw,3rem)] mb-5">Immersive Offerings</h2>
                 <p className="text-text-muted text-[1.1rem]">
-                    Curated experiences to help you align with the natural world.
+                    We are crafting ecosystems designed to align you with the elements.
                 </p>
             </div>
 
