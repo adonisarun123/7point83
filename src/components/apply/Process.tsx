@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+import { applicationFlow } from "@/data/retreats";
+
 export function Process() {
     const sectionRef = useRef<HTMLElement>(null);
 
@@ -23,13 +25,6 @@ export function Process() {
         return () => observer.disconnect();
     }, []);
 
-    const steps = [
-        { number: "1", title: "Apply", description: "Complete this application sharing your intentions and background." },
-        { number: "2", title: "Connect", description: "We'll schedule a brief call to discuss your goals and answer questions." },
-        { number: "3", title: "Confirm", description: "Upon acceptance, secure your spot with a deposit." },
-        { number: "4", title: "Prepare", description: "Receive your welcome kit and pre-retreat guidance." },
-    ];
-
     return (
         <section ref={sectionRef} className="pt-[60px] pb-[clamp(80px,12vw,140px)] px-[5%] max-w-[1100px] mx-auto">
             <div className="text-center mb-16 reveal opacity-0 translate-y-[60px] transition-all duration-1000 ease-out">
@@ -38,22 +33,21 @@ export function Process() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {steps.map((step, index) => (
+                {applicationFlow.map((step, index) => (
                     <div
-                        key={index}
+                        key={step.title}
                         className="text-center relative reveal opacity-0 translate-y-[60px]"
                         style={{ transitionDelay: `${index * 150}ms` }}
                     >
-                        {/* Line connector */}
-                        {index < steps.length - 1 && (
+                        {index < applicationFlow.length - 1 && (
                             <div className="hidden lg:block absolute top-[35px] left-[60%] w-[80%] h-[1px] bg-gradient-to-r from-accent-glow to-transparent" />
                         )}
 
                         <div className="w-[70px] h-[70px] mx-auto mb-5 bg-accent-soft border border-accent-glow rounded-full flex items-center justify-center font-display text-[1.8rem] text-accent-glow">
-                            {step.number}
+                            {index + 1}
                         </div>
                         <h4 className="text-[1.1rem] text-gold mb-2">{step.title}</h4>
-                        <p className="text-[0.9rem] text-text-muted">{step.description}</p>
+                        <p className="text-[0.9rem] text-text-muted">{step.detail}</p>
                     </div>
                 ))}
             </div>

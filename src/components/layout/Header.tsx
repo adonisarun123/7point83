@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
+import { navLinks } from "@/data/retreats";
+
 export function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,12 +22,8 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const navLinks = [
-        { href: "/", label: "Home" },
-        { href: "/retreats", label: "Retreats" },
-        // { href: "/locations", label: "Locations" }, // Not in list of files to implement yet
-        { href: "/philosophy", label: "Philosophy" },
-    ];
+    const primaryLinks = navLinks.filter((link) => link.href !== "/apply");
+    const applyLink = navLinks.find((link) => link.href === "/apply");
 
     return (
         <header
@@ -42,8 +40,8 @@ export function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex gap-10 items-center">
-                {navLinks.map((link) => (
+            <nav className="hidden md:flex gap-8 items-center">
+                {primaryLinks.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
@@ -55,12 +53,14 @@ export function Header() {
                         {link.label}
                     </Link>
                 ))}
-                <Link
-                    href="/apply"
-                    className="px-6 py-2.5 bg-transparent text-text-primary border border-white/20 font-body text-[0.85rem] tracking-[2px] uppercase transition-all duration-400 ease-out hover:border-accent-glow hover:text-accent-glow hover:shadow-[0_0_30px_rgba(79,255,208,0.2)]"
-                >
-                    Apply Now
-                </Link>
+                {applyLink && (
+                    <Link
+                        href={applyLink.href}
+                        className="px-6 py-2.5 bg-transparent text-text-primary border border-white/20 font-body text-[0.85rem] tracking-[2px] uppercase transition-all duration-400 ease-out hover:border-accent-glow hover:text-accent-glow hover:shadow-[0_0_30px_rgba(79,255,208,0.2)]"
+                    >
+                        {applyLink.label}
+                    </Link>
+                )}
             </nav>
 
             {/* Mobile Toggle */}
@@ -74,11 +74,11 @@ export function Header() {
             {/* Mobile Nav */}
             <div
                 className={cn(
-                    "fixed top-0 right-0 w-[80%] max-w-[400px] h-screen bg-bg-deep flex flex-col justify-center gap-8 items-center transition-transform duration-400 ease-out md:hidden border-l border-accent-glow/10",
+                    "fixed top-0 right-0 w-[80%] max-w-[400px] h-screen bg-bg-deep flex flex-col justify-center gap-6 items-center transition-transform duration-400 ease-out md:hidden border-l border-accent-glow/10",
                     mobileMenuOpen ? "translate-x-0" : "translate-x-full"
                 )}
             >
-                {navLinks.map((link) => (
+                {primaryLinks.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
@@ -91,13 +91,15 @@ export function Header() {
                         {link.label}
                     </Link>
                 ))}
-                <Link
-                    href="/apply"
-                    className="px-8 py-3 bg-transparent text-text-primary border border-white/20 font-body text-[1rem] tracking-[2px] uppercase transition-all duration-400 ease-out hover:border-accent-glow hover:text-accent-glow"
-                    onClick={() => setMobileMenuOpen(false)}
-                >
-                    Apply Now
-                </Link>
+                {applyLink && (
+                    <Link
+                        href={applyLink.href}
+                        className="px-8 py-3 bg-transparent text-text-primary border border-white/20 font-body text-[1rem] tracking-[2px] uppercase transition-all duration-400 ease-out hover:border-accent-glow hover:text-accent-glow"
+                        onClick={() => setMobileMenuOpen(false)}
+                    >
+                        {applyLink.label}
+                    </Link>
+                )}
             </div>
         </header>
     );

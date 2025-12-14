@@ -17,8 +17,9 @@ const questrial = Questrial({
 });
 
 export const metadata: Metadata = {
-  title: "7point83club | Tune Into Earth's Frequency",
-  description: "Join the 7.83 Club and tune into Earth's frequency. Experience the science and spirit of resonance.",
+  title: "7point83 Club | India-first mindful retreats",
+  description:
+    "India-only retreats that pair mindful movement, conscious food, and nature immersion for holistic resets in small groups.",
 };
 
 export default function RootLayout({

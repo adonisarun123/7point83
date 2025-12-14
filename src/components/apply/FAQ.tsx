@@ -1,30 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { Plus } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-export function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const faqs = [
-        {
-            question: "Do I need previous experience with meditation?",
-            answer: "No. Our retreats are designed to be accessible to everyone, regardless of experience level. We guide you through all practices step-by-step."
-        },
-        {
-            question: "What is included in the price?",
-            answer: "Everything except your flights. Accommodation, all organic meals, daily classes, workshops, excursions, and airport transfers are included."
-        },
-        {
-            question: "Can I come alone?",
-            answer: "Absolutely. In fact, about 70% of our participants come solo. It's a wonderful way to connect with like-minded people."
-        },
-        {
-            question: "What is the cancellation policy?",
-            answer: "Deposits are non-refundable but transferable to another retreat within 12 months. Full balance is refundable up to 60 days before the retreat start date."
-        }
-    ];
+\"use client\";\n+\n+import { useState } from \"react\";\n+import { Plus } from \"lucide-react\";\n+import { cn } from \"@/lib/utils\";\n+\n+import { faqList } from \"@/data/retreats\";\n+\n+export function FAQ() {\n+  const [openIndex, setOpenIndex] = useState<number | null>(null);\n+  const faqs = faqList;\n*** End Patch***Narrative****
 
     return (
         <section className="py-[clamp(80px,12vw,140px)] px-[5%]">
