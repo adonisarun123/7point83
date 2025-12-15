@@ -67,11 +67,11 @@ export default function PhilosophyPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-8 gap-4">
             <div>
-              <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted">Pillar journeys</p>
-              <h2 className="text-[clamp(2rem,4vw,3rem)]">Choose a pillar to explore</h2>
+              <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted">Pillar stories</p>
+              <h2 className="text-[clamp(2rem,4vw,3rem)]">Hover to reveal more</h2>
             </div>
             <p className="text-text-muted max-w-[500px]">
-              Each pillar page dives into daily rituals, supporting practices, and integration tips so you can align with your focus.
+              Each pillar page dives into rituals, tools, and integration tips. Hover to peek the next insight before clicking through.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -79,13 +79,18 @@ export default function PhilosophyPage() {
               <Link
                 key={pillar.slug}
                 href={`/philosophy/${pillar.slug}`}
-                className="group bg-bg-card border border-[rgba(79,255,208,0.1)] rounded-[20px] p-6 flex flex-col gap-3 hover:border-accent-glow transition"
+                className="group relative overflow-hidden rounded-[20px] border border-[rgba(79,255,208,0.1)] p-6 bg-[rgba(2,10,5,0.7)] transition duration-500 hover:border-accent-glow"
               >
-                <span className="text-[0.75rem] tracking-[3px] uppercase text-text-muted">{pillar.heroBadge}</span>
-                <h3 className="text-[1.4rem] font-semibold">{pillar.title}</h3>
-                <p className="text-text-muted leading-[1.5]">{pillar.heroTagline}</p>
-                <p className="text-[0.85rem] text-text-muted">{pillar.takeaway}</p>
-                <span className="text-[0.75rem] tracking-[2px] uppercase text-accent-glow">Explore</span>
+                <div className="absolute inset-0 bg-gradient-to-br from-[rgba(79,255,208,0.2)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+                <div className="relative space-y-3">
+                  <span className="text-[0.75rem] tracking-[3px] uppercase text-text-muted">{pillar.heroBadge}</span>
+                  <h3 className="text-[1.4rem] font-semibold">{pillar.title}</h3>
+                  <p className="text-text-muted leading-[1.5]">{pillar.heroTagline}</p>
+                  <div className="text-[0.85rem] text-text-muted opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <p>{pillar.takeaway}</p>
+                    <p className="mt-2 text-accent-glow uppercase tracking-[2px]">Explore</p>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>

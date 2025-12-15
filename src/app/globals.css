@@ -38,6 +38,12 @@ body::before {
   z-index: 9998;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-particle {
+    animation: none;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

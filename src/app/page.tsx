@@ -14,6 +14,8 @@ import {
   safetyNotes,
   whatIncluded,
 } from "@/data/retreats";
+import { AmbientPlayer } from "@/components/interactive/AmbientPlayer";
+import { FloatingParticles } from "@/components/interactive/FloatingParticles";
 
 export default function Home() {
   const schema = {
@@ -33,6 +35,7 @@ export default function Home() {
       <Header />
 
       <section className="relative isolate min-h-[85vh] px-[5%] pt-28 pb-20 overflow-hidden">
+        <FloatingParticles />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.9)] to-transparent z-0" />
         <div className="relative max-w-[1100px]">
@@ -49,6 +52,7 @@ export default function Home() {
                 {cta.label}
               </Link>
             ))}
+            <AmbientPlayer />
           </div>
           <div className="grid grid-cols-3 gap-6 max-w-[640px]">
             {heroCopy.metrics.map((metric) => (
