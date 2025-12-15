@@ -28,7 +28,7 @@ export function Header() {
     return (
         <header
             className={cn(
-                "fixed top-0 w-full px-[5%] flex justify-between items-center z-50 transition-all duration-400 ease-out",
+                "fixed top-0 w-full px-[5%] flex justify-between items-center z-50 transition-all duration-400 ease-out before:content-[''] before:absolute before:inset-x-0 before:top-full before:h-px before:bg-[radial-gradient(circle,_rgba(79,255,208,0.4),_transparent)] relative",
                 scrolled
                     ? "py-4 bg-[rgba(2,10,5,0.95)] backdrop-blur-md"
                     : "py-6 bg-gradient-to-b from-[rgba(2,10,5,0.9)] to-transparent"

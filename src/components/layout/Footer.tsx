@@ -4,7 +4,7 @@ import { contactPoints, footerSections } from "@/data/retreats";
 
 export function Footer() {
     return (
-        <footer className="py-16 px-[5%] bg-bg-main border-t border-accent-glow/10">
+        <footer className="py-16 px-[5%] bg-bg-main border-t border-accent-glow/10 relative">
             <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-10 lg:gap-16">
                 <div className="flex flex-col gap-4">
                     <h3 className="font-display text-[1.6rem] text-accent-glow tracking-[2px]">7point83</h3>

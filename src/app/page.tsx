@@ -11,7 +11,6 @@ import {
   heroCopy,
   homeJourney,
   retreatMatrix,
-  sampleDailyFlow,
   safetyNotes,
   whatIncluded,
 } from "@/data/retreats";
@@ -33,8 +32,9 @@ export default function Home() {
       <Schema schema={schema} />
       <Header />
 
-      <section className="relative isolate min-h-[80vh] flex items-center bg-gradient-to-br from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.6)] to-transparent px-[5%] pt-28 pb-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_1200px_at_top,_rgba(79,255,208,0.08),_transparent_50%)]" />
+      <section className="relative isolate min-h-[85vh] px-[5%] pt-28 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.9)] to-transparent z-0" />
         <div className="relative max-w-[1100px]">
           <p className="text-[0.85rem] tracking-[4px] uppercase text-accent-glow mb-6">India · nature · resonance</p>
           <h1 className="text-[clamp(2.6rem,5vw,4.8rem)] leading-[1.1] mb-6 font-light">{heroCopy.title}</h1>
@@ -50,7 +50,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="grid grid-cols-3 gap-6 max-w-[600px]">
+          <div className="grid grid-cols-3 gap-6 max-w-[640px]">
             {heroCopy.metrics.map((metric) => (
               <div key={metric.label} className="text-center">
                 <p className="text-[1.8rem] font-bold">{metric.value}</p>
@@ -63,7 +63,7 @@ export default function Home() {
 
       <section className="px-[5%] py-[clamp(80px,12vw,140px)]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted">Our approach</p>
             <h2 className="text-[clamp(2rem,4vw,3rem)]">Attune · Restore · Integrate</h2>
             <p className="text-text-muted max-w-[700px] mx-auto mt-3">
@@ -164,28 +164,36 @@ export default function Home() {
       </section>
 
       <section className="px-[5%] py-[clamp(80px,12vw,140px)]">
-        <div className="max-w-[1200px] mx-auto grid gap-8 lg:grid-cols-2">
-          <div className="bg-bg-card border border-[rgba(79,255,208,0.15)] rounded-[24px] p-6">
-            <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted mb-6">Sample rhythm</p>
-            <div className="grid gap-3">
-              {sampleDailyFlow.map((slot) => (
-                <div key={slot.time} className="flex justify-between text-sm text-text-muted">
-                  <span className="font-semibold text-text-primary">{slot.time}</span>
-                  <span>{slot.session}</span>
-                </div>
-              ))}
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+            <div className="bg-bg-card border border-[rgba(79,255,208,0.15)] rounded-[24px] p-8">
+              <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted mb-4">What to expect</p>
+              <p className="text-lg text-text-primary mb-4">
+                Every day blends breathwork, yoga/mobility, nourishment, and reflection. Want the full sample rhythm? Explore any retreat detail to see the complete daily flow.
+              </p>
+              <Link
+                href="/retreats"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-accent-glow rounded-full tracking-[2px] uppercase text-[0.85rem] text-accent-glow hover:bg-accent-glow hover:text-bg-deep transition"
+              >
+                See daily flow
+              </Link>
             </div>
-          </div>
-          <div className="bg-bg-card border border-[rgba(79,255,208,0.15)] rounded-[24px] p-6">
-            <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted mb-6">What is included</p>
-            <ul className="grid gap-3 text-text-muted text-[0.95rem]">
-              {whatIncluded.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-accent-glow">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="bg-[rgba(10,31,18,0.6)] border border-[rgba(255,255,255,0.1)] rounded-[24px] p-8 text-text-muted">
+              <p className="text-[0.85rem] tracking-[4px] uppercase text-text-muted mb-4">Path to Alpha</p>
+              <div className="space-y-4">
+                {applicationFlow.slice(0, 3).map((step, index) => (
+                  <div key={step.title} className="flex gap-3 items-start">
+                    <div className="w-10 h-10 rounded-full border border-[rgba(79,255,208,0.4)] flex items-center justify-center text-accent-glow font-semibold">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-semibold">{step.title}</p>
+                      <p className="text-sm leading-[1.6]">{step.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -197,7 +205,7 @@ export default function Home() {
             <div className="space-y-5">
               {applicationFlow.map((step, index) => (
                 <div key={step.title} className="flex gap-3 items-start">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-[rgba(79,255,208,0.4)] text-accent-glow font-semibold">
+                  <div className="w-8 h-8 rounded-full border border-[rgba(79,255,208,0.5)] flex items-center justify-center text-accent-glow font-semibold">
                     {index + 1}
                   </div>
                   <div>
