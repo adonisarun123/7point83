@@ -2,7 +2,7 @@
 
 export function FloatingParticles() {
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(circle_at_top,_rgba(0,0,0,1),_rgba(0,0,0,0))]">
+    <div className="pointer-events-none absolute inset-0 z-10 [mask-image:radial-gradient(circle_at_top,_rgba(0,0,0,1),_rgba(0,0,0,0))]">
       {[...Array(8)].map((_, index) => (
         <span
           key={index}

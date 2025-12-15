@@ -42,8 +42,8 @@ export default function Home() {
         <OxygenBubbleField className="-z-10" />
         <FloatingParticles />
         <GradientPulse />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.9)] to-transparent z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)] -z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.9)] to-transparent -z-10" />
         <div className="relative max-w-[1100px]">
           <p className="text-[0.85rem] tracking-[4px] uppercase text-accent-glow mb-6" aria-live="polite">
             <HeroTagline />
