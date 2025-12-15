@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import { AmbientPlayer } from "@/components/interactive/AmbientPlayer";
+import { BubbleField } from "@/components/interactive/BubbleField";
 import { FloatingParticles } from "@/components/interactive/FloatingParticles";
 import { GradientPulse } from "@/components/interactive/GradientPulse";
 import { HeroTagline } from "@/components/interactive/HeroTagline";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Schema } from "@/components/seo/Schema";
+import { WaveGraphic } from "@/components/interactive/WaveGraphic";
 
 import {
   applicationFlow,
@@ -37,6 +39,7 @@ export default function Home() {
       <Header />
 
       <section className="relative isolate min-h-[85vh] px-[5%] pt-28 pb-20 overflow-hidden">
+        <BubbleField className="-z-10" />
         <FloatingParticles />
         <GradientPulse />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)]" />
@@ -68,6 +71,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <WaveGraphic className="-z-20" />
       </section>
 
       <section className="px-[5%] py-[clamp(80px,12vw,140px)]">
