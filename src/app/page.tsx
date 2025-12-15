@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AmbientPlayer } from "@/components/interactive/AmbientPlayer";
 import { FloatingParticles } from "@/components/interactive/FloatingParticles";
 import { GradientPulse } from "@/components/interactive/GradientPulse";
+import { HeroTagline } from "@/components/interactive/HeroTagline";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Schema } from "@/components/seo/Schema";
@@ -30,9 +31,6 @@ export default function Home() {
     sameAs: ["https://instagram.com/7point83club", "https://twitter.com/7point83club"],
   };
 
-  const rotatingPhrases = ["India · nature · resonance", "Attune · Restore · Integrate"];
-  const heroPhrase = rotatingPhrases[Math.floor(Date.now() / 2500) % rotatingPhrases.length];
-
   return (
     <main className="min-h-screen bg-bg-deep text-text-primary font-body selection:bg-accent-glow selection:text-bg-deep">
       <Schema schema={schema} />
@@ -44,8 +42,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,10,5,0.95)] via-[rgba(2,10,5,0.9)] to-transparent z-0" />
         <div className="relative max-w-[1100px]">
-          <p className="text-[0.85rem] tracking-[4px] uppercase text-accent-glow mb-6 animated-tagline" aria-live="polite">
-            {heroPhrase}
+          <p className="text-[0.85rem] tracking-[4px] uppercase text-accent-glow mb-6" aria-live="polite">
+            <HeroTagline />
           </p>
           <h1 className="text-[clamp(2.6rem,5vw,4.8rem)] leading-[1.1] mb-6 font-light">{heroCopy.title}</h1>
           <p className="text-[1.15rem] text-text-muted max-w-[780px] mb-8">{heroCopy.subtitle}</p>
