@@ -44,6 +44,55 @@ body::before {
   }
 }
 
+.anim-gradient-pulse {
+  animation: gradientPulse 18s ease-in-out infinite;
+}
+
+.button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(79,255,208,0.3), transparent 60%);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button-glow:hover::after,
+.button-glow:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animated-tagline {
+  animation: taglinePulse 6s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes taglinePulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
