@@ -1,6 +1,6 @@
 "use client";
 
-import { PillarDetail } from "@/data/philosophy";
+import type { PillarDetail } from "@/data/philosophy";
 
 export function PillarDetail({ pillar }: { pillar: PillarDetail }) {
   return (
