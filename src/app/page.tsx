@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useMemo } from "react";
 
 import { AmbientPlayer } from "@/components/interactive/AmbientPlayer";
 import { FloatingParticles } from "@/components/interactive/FloatingParticles";
@@ -32,10 +31,7 @@ export default function Home() {
   };
 
   const rotatingPhrases = ["India · nature · resonance", "Attune · Restore · Integrate"];
-  const heroPhrase = useMemo(
-    () => rotatingPhrases[Math.floor(Date.now() / 2500) % rotatingPhrases.length],
-    [rotatingPhrases]
-  );
+  const heroPhrase = rotatingPhrases[Math.floor(Date.now() / 2500) % rotatingPhrases.length];
 
   return (
     <main className="min-h-screen bg-bg-deep text-text-primary font-body selection:bg-accent-glow selection:text-bg-deep">
