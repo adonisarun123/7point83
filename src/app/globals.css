@@ -93,31 +93,32 @@ body::before {
   }
 }
 
-.bubble-field {
+.oxygen-field {
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
 
-.bubble {
+.oxygen-bubble {
   position: absolute;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(79, 255, 208, 0.6), rgba(79, 255, 208, 0.15));
-  filter: blur(0.1px);
-  animation-name: bubbleFloat;
-  animation-timing-function: ease-in-out;
+  background: radial-gradient(circle at 35% 35%, rgba(232, 245, 224, 0.5), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 0 20px rgba(79, 255, 208, 0.3);
+  transform: translate3d(0, 0, 0);
+  animation-name: oxygenRise;
+  animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
   animation-iteration-count: infinite;
 }
 
-@keyframes bubbleFloat {
+@keyframes oxygenRise {
   0% {
     transform: translateY(0) scale(0.95);
   }
-  50% {
-    opacity: 0.6;
+  25% {
+    opacity: 0.85;
   }
   100% {
-    transform: translateY(-140%) scale(1.15);
+    transform: translateY(-150%) scale(1.2);
     opacity: 0;
   }
 }
