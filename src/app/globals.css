@@ -150,7 +150,11 @@ body::before {
 
 @layer components {
   .glass-card {
-    @apply bg-bg-card/40 backdrop-blur-sm border border-white/10 rounded-[24px] transition-all duration-500 hover:border-accent-glow/30 hover:bg-bg-card/60 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0, 0, 0, 0.2)];
+    @apply bg-bg-card/40 backdrop-blur-sm border border-white/10 rounded-[24px] transition-all duration-500 hover:border-accent-glow/30 hover:bg-bg-card/60 hover:-translate-y-1;
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   }
 
   .section-padding {
