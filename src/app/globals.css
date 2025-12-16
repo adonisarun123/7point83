@@ -141,3 +141,17 @@ body::before {
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .glass-card {
+    @apply bg-bg-card/40 backdrop-blur-sm border border-white/10 rounded-[24px] transition-all duration-500 hover:border-accent-glow/30 hover:bg-bg-card/60 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)];
+  }
+  
+  .section-padding {
+    @apply py-[clamp(100px,15vw,180px)] px-[5%];
+  }
+
+  .heading-display {
+    @apply font-display font-light leading-[1.1];
+  }
+}
