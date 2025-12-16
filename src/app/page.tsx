@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { AmbientPlayer } from "@/components/interactive/AmbientPlayer";
-import { OxygenBubbleField } from "@/components/interactive/OxygenBubbleField";
+import { AuroraBackground } from "@/components/interactive/AuroraBackground";
 import { FloatingParticles } from "@/components/interactive/FloatingParticles";
 import { GradientPulse } from "@/components/interactive/GradientPulse";
 import { HeroTagline } from "@/components/interactive/HeroTagline";
@@ -39,7 +39,7 @@ export default function Home() {
       <Header />
 
       <section className="relative isolate min-h-[85vh] px-[5%] pt-28 pb-20 overflow-hidden">
-        <OxygenBubbleField className="-z-10" />
+        <AuroraBackground className="-z-10" />
         <FloatingParticles />
         <GradientPulse />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,255,208,0.08),_transparent_40%)] -z-20" />
